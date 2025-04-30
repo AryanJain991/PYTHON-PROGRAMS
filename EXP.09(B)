@@ -1,0 +1,13 @@
+def compute_gcf_lcm(a, b):
+    def gcd(x, y):
+        while y:
+            x, y = y, x % y
+        return x
+
+    gcf = gcd(a, b)
+    lcm = abs(a * b) // gcf
+    return gcf, lcm
+
+gcf, lcm = compute_gcf_lcm(12, 18)
+print("GCF:", gcf)
+print("LCM:", lcm)
