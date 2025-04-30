@@ -1,0 +1,29 @@
+def nearly_equal(str1, str2):
+    if str1 == str2:
+        return True
+    if abs(len(str1) - len(str2)) > 1:
+        return False
+
+    i = j = diff = 0
+    while i < len(str1) and j < len(str2):
+        if str1[i] != str2[j]:
+            if diff == 1:
+                return False
+            diff += 1
+            if len(str1) > len(str2):
+                i += 1
+            elif len(str1) < len(str2):
+                j += 1
+            else:
+                i += 1
+                j += 1
+        else:
+            i += 1
+            j += 1
+
+    return True
+
+print(nearly_equal("test", "tent"))     # True (1 substitution)
+print(nearly_equal("test", "tes"))      # True (1 deletion)
+print(nearly_equal("test", "tests"))    # True (1 insertion)
+print(nearly_equal("test", "toast"))    # False
