@@ -1,0 +1,13 @@
+birthdays = {
+    "Aryan": "2003-08-15",
+    "Riya": "2002-12-01",
+    "Rahul": "2001-05-25"
+}
+
+name = "Riya"
+date = birthdays.get(name)
+
+date_parts = date.split("-")
+formatted_date = "/".join(date_parts)
+
+print(f"{name}'s birthday is on {formatted_date}")
